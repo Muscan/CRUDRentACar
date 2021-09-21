@@ -30,14 +30,44 @@ namespace CRUDRentACar.Controllers
             return -1;
         }
 
-        //Updates the car TBD!!!
-        public bool Update(string nume, int pret)
+        //Updates the car
+        public void UpdateCombustibil(string nume, string combustibil)
+        {
+            int index = carIndex(nume);
+            if (index != -1)
+            {
+                masini[index].setCombustibil(combustibil);
+            }
+            else
+                MessageBox .Show("Masina nu a fost gasita");
+        }
+
+        public void UpdateAn(string nume, int an)
+        {
+            int index = carIndex(nume);
+            if (index != -1)
+            {
+                masini[index].setAn(an);
+            }
+            else MessageBox.Show("Masina nu a fost gasita");
+        }
+
+        public void UpdateKM(string nume, int km)
+        {
+            int index = carIndex(nume);
+            if (index != -1)
+            {
+                masini[index].setKilometraj(km);
+            }
+            else MessageBox.Show("Masina nu a fost gasita");
+        }
+
+        public bool UpdatePret(string nume, int pret)
         {
             int index = carIndex(nume);
             if (index != -1)
             {
                 masini[index].setPret(pret);
-                MessageBox.Show("Pretul a fost updatat");
                 return true;
             }
             MessageBox.Show("Masina nu a fost gasita");
@@ -50,7 +80,8 @@ namespace CRUDRentACar.Controllers
             if (index == -1)
             {
                 this.masini.Add(masina);
-                MessageBox.Show("Item Add!");
+                MessageBox.Show("Item Added!");
+                saveToFileTxt();
                 return true;
             }
             MessageBox.Show("Item exists");
@@ -65,9 +96,10 @@ namespace CRUDRentACar.Controllers
             {
                 MessageBox.Show("Item " + masini[index].getMarca() + " deleted");
                 this.masini.RemoveAt(index);
+                saveToFileTxt();
                 return true;
             }
-            MessageBox.Show("Item not deleted ");
+            MessageBox.Show("Item not found ");
             return false;
         }
 
@@ -160,54 +192,87 @@ namespace CRUDRentACar.Controllers
             return null;
 
         }
-
+        //if car is available
         public bool isAvailable(String marca)
         {
-            for(int i=0; i<masini.Count;i++)
+            if (getMasina(marca)!=null)
             {
-
-                if (masini[i].getMarca().Equals(marca))
-                {
-                    return masini[i].getStare();
-                }
+                return getMasina(marca).getStare();
             }
+
             return false;
+           
         }
 
         public void rentCar(TextBox client, TextBox marca)
         {
             String numeC = client.Text;
             String numeM = marca.Text;
-
-            if (isAvailable(numeM))
+           
+            if (isAvailable(numeM) == true)
             {
-                changeStatus(numeM, numeC);
+                changeClientName(numeM, numeC);
+                changeStatus(numeM);
+
                 saveToFileTxt();
                 MessageBox.Show("Masina a fost inchiriata cu succes!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Masina nu este disponibila", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Masina nu poate fi inchiriata", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
-
-        public void changeStatus(String marca, String nume)
+        public void returnCar(TextBox marcaReturn, TextBox client)
         {
-            Masina masina = getMasina(marca);
 
-            if (isAvailable(marca))
+
+            String marca = marcaReturn.Text;
+            String clientText = client.Text;
+
+
+            if (isAvailable(marca)==false)
             {
-                masina.setClient(nume);
-                masina.setStare(!masina.getStare());
+                
+                changeStatus(marca);
+                changeClientName(marca,clientText);
+                saveToFileTxt();
+                MessageBox.Show("Masina returnata");
+                
             }
             else
             {
-
-                masina.setClient("Undefined");
-                masina.setStare(!masina.getStare());
-
+                MessageBox.Show("Masina nu e disponibila");
             }
+        }
+
+        public void changeStatus(String marca)
+        {
+            Masina masina = getMasina(marca);
+            {
+               masina.setStare(!masina.getStare());
+            }
+        }
+
+        public void changeClientName(String marca, String nume)
+        {
+            Masina masina = getMasina(marca);//initialize the Masina object
+            if (isAvailable(marca))
+            {
+                masina.setClient(nume);
+               //for the car extracted from the list client name is set 
+            }
+            else
+            {
+                masina.setClient("Name not added for the new car");
+            }
+        }
+
+        public void returnStatus(String marca)
+        {
+            Masina masina = getMasina(marca);
+            masina.setStare(false);
+            masina.setClient("Car is available");
         }
     }
 }

@@ -34,5 +34,29 @@ namespace CRUDRentACar
             DataEntry dataEntry = new DataEntry();
             dataEntry.Show();
         }
+
+        private void returnareMasinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataReturn dataReturn = new DataReturn();
+            dataReturn.Show();
+        }
+
+        private void adaugareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCarForm addCar = new AddCarForm();
+            addCar.Show();
+        }
+
+        private void eliminareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveCarForm removeCarForm = new RemoveCarForm();
+            removeCarForm.Show();
+        }
+
+        private void editareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm();
+            updateForm.Show();
+        }
     }
 }

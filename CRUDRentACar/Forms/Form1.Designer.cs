@@ -81,22 +81,23 @@ namespace CRUDRentACar
             // statusParcAutoToolStripMenuItem
             // 
             this.statusParcAutoToolStripMenuItem.Name = "statusParcAutoToolStripMenuItem";
-            this.statusParcAutoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.statusParcAutoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.statusParcAutoToolStripMenuItem.Text = "Status Parc Auto";
             this.statusParcAutoToolStripMenuItem.Click += new System.EventHandler(this.statusParcAutoToolStripMenuItem_Click);
             // 
             // inchiriereMasinaToolStripMenuItem
             // 
             this.inchiriereMasinaToolStripMenuItem.Name = "inchiriereMasinaToolStripMenuItem";
-            this.inchiriereMasinaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inchiriereMasinaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.inchiriereMasinaToolStripMenuItem.Text = "Inchiriere Masina";
             this.inchiriereMasinaToolStripMenuItem.Click += new System.EventHandler(this.inchiriereMasinaToolStripMenuItem_Click);
             // 
             // returnareMasinaToolStripMenuItem
             // 
             this.returnareMasinaToolStripMenuItem.Name = "returnareMasinaToolStripMenuItem";
-            this.returnareMasinaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.returnareMasinaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.returnareMasinaToolStripMenuItem.Text = "Returnare Masina";
+            this.returnareMasinaToolStripMenuItem.Click += new System.EventHandler(this.returnareMasinaToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -111,20 +112,23 @@ namespace CRUDRentACar
             // adaugareToolStripMenuItem
             // 
             this.adaugareToolStripMenuItem.Name = "adaugareToolStripMenuItem";
-            this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.adaugareToolStripMenuItem.Text = "Adaugare";
+            this.adaugareToolStripMenuItem.Click += new System.EventHandler(this.adaugareToolStripMenuItem_Click);
             // 
             // eliminareToolStripMenuItem
             // 
             this.eliminareToolStripMenuItem.Name = "eliminareToolStripMenuItem";
-            this.eliminareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.eliminareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eliminareToolStripMenuItem.Text = "Eliminare";
+            this.eliminareToolStripMenuItem.Click += new System.EventHandler(this.eliminareToolStripMenuItem_Click);
             // 
             // editareToolStripMenuItem
             // 
             this.editareToolStripMenuItem.Name = "editareToolStripMenuItem";
-            this.editareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.editareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editareToolStripMenuItem.Text = "Editare";
+            this.editareToolStripMenuItem.Click += new System.EventHandler(this.editareToolStripMenuItem_Click);
             // 
             // toolStriplblOperatiuni
             // 

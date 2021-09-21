@@ -16,7 +16,7 @@ namespace CRUDRentACar.Forms
         {
             InitializeComponent();
         }
-
+        //marca,combustibil,pret an, kilometraj, stare, numeClient)
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,6 +26,7 @@ namespace CRUDRentACar.Forms
         {
             if(IsNotEmpty(txtBoxNume) == false)
             {
+
                  MandatoryField("Nume.");
             }
             else if(IsNotEmpty(txtBoxMarca) == false)
@@ -39,6 +40,11 @@ namespace CRUDRentACar.Forms
                 txtBoxNume.Clear();
                 txtBoxMarca.Clear();
             }
+        }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

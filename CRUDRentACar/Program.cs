@@ -1,3 +1,4 @@
+using CRUDRentACar.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace CRUDRentACar
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+
+
+            /*ControllerMasina cm = new ControllerMasina();
+            MessageBox.Show(cm.isAvailable("Dacia").ToString());*/
         }
     }
 }

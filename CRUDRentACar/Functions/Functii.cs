@@ -17,5 +17,14 @@ namespace CRUDRentACar.Functions
         {
             MessageBox.Show("Obligatoriu: " + field);
         }
+
+        public static void ClearFields(TextBox txt1, TextBox txt2, TextBox txt3, TextBox txt4, TextBox txt5)
+        {
+            txt1.Clear();
+            txt2.Clear();
+            txt3.Clear();
+            txt4.Clear();
+            txt5.Clear();
+        }
     }
 }

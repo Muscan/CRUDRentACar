@@ -47,6 +47,7 @@ namespace CRUDRentACar.Forms
             this.lblDate.Size = new System.Drawing.Size(252, 24);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "Introducere Date Inchiriere";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // lblNume
             // 
