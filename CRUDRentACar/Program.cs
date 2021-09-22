@@ -1,10 +1,12 @@
+using CRUDRentACar.Classes;
 using CRUDRentACar.Controllers;
+using CRUDRentACar.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static CRUDRentACar.Controllers.ControllerUser;
 namespace CRUDRentACar
 {
     static class Program
@@ -18,11 +20,17 @@ namespace CRUDRentACar
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new LoginForm());
+            //Application.Run(new frmMain());
 
 
-            /*ControllerMasina cm = new ControllerMasina();
-            MessageBox.Show(cm.isAvailable("Dacia").ToString());*/
+    
+
+
+
+
+
+
         }
     }
 }

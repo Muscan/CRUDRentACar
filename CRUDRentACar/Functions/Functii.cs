@@ -26,5 +26,14 @@ namespace CRUDRentACar.Functions
             txt4.Clear();
             txt5.Clear();
         }
+        
+        public static void ClearLoginFields(TextBox txt1, TextBox txt2)
+        {
+            txt1.Clear();
+            txt2.Clear();
+        
+        }
+
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace CRUDRentACar.Classes
 {
@@ -57,6 +58,16 @@ namespace CRUDRentACar.Classes
         public void setId(int id)
         {
             this.id = id;
+        }
+
+        public string userDesc()
+        {
+            string userDetails = "";
+            return userDetails;
+        }
+        public void afisareUser()
+        {
+            MessageBox.Show(this.userDesc());
         }
         public String toSaveClient()
         {
