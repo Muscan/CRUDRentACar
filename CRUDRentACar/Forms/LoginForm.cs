@@ -42,12 +42,7 @@ namespace CRUDRentACar.Forms
               }
             else
             {
-                
 
-
-               
-                
-               
             }
         }
 
@@ -64,7 +59,6 @@ namespace CRUDRentACar.Forms
             string pass = txtBoxPassword.Text;
 
             bool admin = checkBoxIsAdmin.Checked = false;
-
 
 
             User u = controll.returnUser(name,pass);
