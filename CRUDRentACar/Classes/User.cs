@@ -55,19 +55,16 @@ namespace CRUDRentACar.Classes
         }
 
         //userDesc
-        public string userDesc()
+        public string userDesc(User user)
         {
             string userDetails = "";
+            userDetails += user.getUser() + " ";
+            userDetails += user.getPassword() + " ";
+            userDetails += user.getIsAdmin() + " ";
             return userDetails;
               
         }
-
-        public void afisareUsers()
-        {
-            
-           this.userDesc();
-        }
-
+        
     }
     
 }

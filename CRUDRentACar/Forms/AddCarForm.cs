@@ -15,8 +15,8 @@ namespace CRUDRentACar.Forms
         ControllerMasina controllerMasina = new ControllerMasina();
         Masina masina = new Masina();
 
-        public bool IsNotEmpty { get; private set; }
-        public object MandatoryField { get; private set; }
+        /*public bool IsNotEmpty { get; private set; }
+        public object MandatoryField { get; private set; }*/
 
         public AddCarForm()
         {

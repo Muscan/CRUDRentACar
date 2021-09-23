@@ -105,7 +105,7 @@ namespace CRUDRentACar.Controllers
             else MessageBox.Show("User name not updated");
         }
 
-        //delete
+        //reads from file
         public void readUserTxt()
         {
             StreamReader read = new StreamReader(@"../../../Files/Users.txt");
@@ -118,6 +118,8 @@ namespace CRUDRentACar.Controllers
                 string user = formattedUser[0];
                 string password = formattedUser[1];
                 bool isAdmin = bool.Parse(formattedUser[2]);
+                User userToAdd = new User(user, password, isAdmin);
+                users.Add(userToAdd);
                 line = read.ReadLine();
                 
             }
@@ -160,7 +162,8 @@ namespace CRUDRentACar.Controllers
             for (int i = 0; i < users.Count; i++)
             {
 
-                if (users[i].getUser().Equals(nume) && users[i].getPassword().Equals(password))
+                if (users[i].getUser().Equals(nume) 
+                 && users[i].getPassword().Equals(password))
                 {
                    
                     return users[i];
@@ -170,6 +173,33 @@ namespace CRUDRentACar.Controllers
             return null;
 
         }
+        //Function not used for the moment
+        public bool isUserAdmin(User userRole)
+
+        {
+            if (userRole.getIsAdmin() == true)
+            {
+                return true;
+            }
+            return false;
+        }
+    
+        public void AfisareUsers(ListView listUsers)
+        {
+            listUsers.Clear();
+            listUsers.Columns.Add("User", 100, HorizontalAlignment.Left);
+            listUsers.Columns.Add("Password", 100, HorizontalAlignment.Left);
+            listUsers.Columns.Add("Is Admin", 100, HorizontalAlignment.Left);
+            for (int i = 0; i < users.Count; i++)
+            {
+                ListViewItem linie = new ListViewItem();
+                linie.Text = users[i].getUser();
+                linie.SubItems.Add(users[i].getPassword());
+                linie.SubItems.Add(users[i].getIsAdmin().ToString());
+                listUsers.Items.Add(linie);
+            }
+        }
+        
 
     }
 }

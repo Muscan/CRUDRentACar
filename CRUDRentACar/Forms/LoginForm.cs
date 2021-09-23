@@ -13,17 +13,14 @@ namespace CRUDRentACar.Forms
 {
     public partial class LoginForm : Form
     {
-        private ControllerUser controll;
+        private ControllerUser control;
         public LoginForm()
         {
             InitializeComponent();
 
 
-            this.controll = new ControllerUser();
+            this.control = new ControllerUser();
         }
-
-
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -42,35 +39,38 @@ namespace CRUDRentACar.Forms
               }
             else
             {
+                LoginForm loginForm = new LoginForm();
 
+                frmMain frm = new frmMain();
+
+                string name = txtBoxUserName.Text;
+
+
+                string pass = txtBoxPassword.Text;
+
+               //bool admin = checkBoxIsAdmin.Checked = false;
+
+
+                User u = control.returnUser(name,pass);
+               
+                if (u != null)
+                {   
+                    //function which checks if the user is admin and displays the register
+               
+                    frm.Show();
+                    ClearLoginFields(txtBoxPassword, txtBoxUserName);
+                    checkBoxIsAdmin.Checked = false;               
+                }
+                else
+                {
+                    MessageBox.Show("Login does not work or person does not exist");
+                }
             }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-
-
-
-            frmMain frm = new frmMain();
-
-            string name = txtBoxUserName.Text;
-
-            string pass = txtBoxPassword.Text;
-
-            bool admin = checkBoxIsAdmin.Checked = false;
-
-
-            User u = controll.returnUser(name,pass);
-
-            if (u != null)
-            {
-                frm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Login does not work or person does not exist");
-            }
+            
             
         }
     }

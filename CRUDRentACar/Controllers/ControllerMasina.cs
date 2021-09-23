@@ -124,7 +124,7 @@ namespace CRUDRentACar.Controllers
                 int kilometri = int.Parse(formattedWord[4]);
                 bool stare = bool.Parse(formattedWord[5]);
                 string numeClient = formattedWord[6];
-                Masina masina = new Masina(marca, combustibil, pret, an, kilometri, stare, numeClient); ;
+                Masina masina = new Masina(marca, combustibil, pret, an, kilometri, stare, numeClient);
                 masini.Add(masina);
                 line = read.ReadLine();
             }
@@ -170,14 +170,6 @@ namespace CRUDRentACar.Controllers
                 linie.SubItems.Add(masina.getKilometraj().ToString());
                 linie.SubItems.Add(masina.getStare().ToString());
                 linie.SubItems.Add(masina.getClient());
-                /* if (masina.getClient().Equals("not defined"))
-                 {
-                     linie.SubItems.Add(" ");
-                 }
-                 else
-                 {
-                     linie.SubItems.Add(masina.getClient());
-                 }*/
                  listMasini.Items.Add(linie);
             }
         }

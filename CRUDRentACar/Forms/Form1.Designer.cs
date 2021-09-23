@@ -41,6 +41,9 @@ namespace CRUDRentACar
             this.eliminareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStriplblOperatiuni = new System.Windows.Forms.ToolStripLabel();
+            this.btnSignOut = new System.Windows.Forms.Button();
+            this.btnPrintAllUsers = new System.Windows.Forms.Button();
+            this.lstUsers = new System.Windows.Forms.ListView();
             this.toolStripOperatiuni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +78,7 @@ namespace CRUDRentACar
             this.inchiriereMasinaToolStripMenuItem,
             this.returnareMasinaToolStripMenuItem});
             this.operatiiToolStripMenuItem.Name = "operatiiToolStripMenuItem";
-            this.operatiiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.operatiiToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.operatiiToolStripMenuItem.Text = "Operatii";
             // 
             // statusParcAutoToolStripMenuItem
@@ -106,27 +109,27 @@ namespace CRUDRentACar
             this.eliminareToolStripMenuItem,
             this.editareToolStripMenuItem});
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // adaugareToolStripMenuItem
             // 
             this.adaugareToolStripMenuItem.Name = "adaugareToolStripMenuItem";
-            this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.adaugareToolStripMenuItem.Text = "Adaugare";
             this.adaugareToolStripMenuItem.Click += new System.EventHandler(this.adaugareToolStripMenuItem_Click);
             // 
             // eliminareToolStripMenuItem
             // 
             this.eliminareToolStripMenuItem.Name = "eliminareToolStripMenuItem";
-            this.eliminareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eliminareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.eliminareToolStripMenuItem.Text = "Eliminare";
             this.eliminareToolStripMenuItem.Click += new System.EventHandler(this.eliminareToolStripMenuItem_Click);
             // 
             // editareToolStripMenuItem
             // 
             this.editareToolStripMenuItem.Name = "editareToolStripMenuItem";
-            this.editareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editareToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.editareToolStripMenuItem.Text = "Editare";
             this.editareToolStripMenuItem.Click += new System.EventHandler(this.editareToolStripMenuItem_Click);
             // 
@@ -136,11 +139,47 @@ namespace CRUDRentACar
             this.toolStriplblOperatiuni.Size = new System.Drawing.Size(79, 24);
             this.toolStriplblOperatiuni.Text = "Operatiuni";
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.Red;
+            this.btnSignOut.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSignOut.Location = new System.Drawing.Point(600, 589);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(142, 65);
+            this.btnSignOut.TabIndex = 1;
+            this.btnSignOut.Text = "Sign out";
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // btnPrintAllUsers
+            // 
+            this.btnPrintAllUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnPrintAllUsers.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPrintAllUsers.Location = new System.Drawing.Point(578, 30);
+            this.btnPrintAllUsers.Name = "btnPrintAllUsers";
+            this.btnPrintAllUsers.Size = new System.Drawing.Size(142, 65);
+            this.btnPrintAllUsers.TabIndex = 2;
+            this.btnPrintAllUsers.Text = "Print All Users";
+            this.btnPrintAllUsers.UseVisualStyleBackColor = false;
+            this.btnPrintAllUsers.Click += new System.EventHandler(this.btnPrintAllUsers_Click);
+            // 
+            // lstUsers
+            // 
+            this.lstUsers.HideSelection = false;
+            this.lstUsers.Location = new System.Drawing.Point(578, 101);
+            this.lstUsers.Name = "lstUsers";
+            this.lstUsers.Size = new System.Drawing.Size(424, 214);
+            this.lstUsers.TabIndex = 3;
+            this.lstUsers.UseCompatibleStateImageBehavior = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 734);
+            this.Controls.Add(this.lstUsers);
+            this.Controls.Add(this.btnPrintAllUsers);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.toolStripOperatiuni);
             this.Name = "frmMain";
             this.Text = "Main";
@@ -165,6 +204,9 @@ namespace CRUDRentACar
         private System.Windows.Forms.ToolStripMenuItem eliminareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editareToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStriplblOperatiuni;
+        private System.Windows.Forms.Button btnSignOut;
+        private System.Windows.Forms.Button btnPrintAllUsers;
+        private System.Windows.Forms.ListView lstUsers;
     }
 }
 

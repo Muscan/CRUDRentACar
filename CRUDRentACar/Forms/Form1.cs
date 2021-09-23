@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CRUDRentACar.Controllers;
 
 namespace CRUDRentACar
 {
@@ -57,6 +58,19 @@ namespace CRUDRentACar
         {
             UpdateForm updateForm = new UpdateForm();
             updateForm.Show();
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+
+        }
+
+        private void btnPrintAllUsers_Click(object sender, EventArgs e)
+        {
+            ControllerUser controllerUser = new ControllerUser();
+            controllerUser.AfisareUsers(lstUsers);
         }
     }
 }
