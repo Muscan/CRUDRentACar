@@ -62,18 +62,19 @@ namespace CRUDRentACar.Forms
             // 
             this.txtBoxEliminareMarca.Location = new System.Drawing.Point(270, 170);
             this.txtBoxEliminareMarca.Name = "txtBoxEliminareMarca";
-            this.txtBoxEliminareMarca.Size = new System.Drawing.Size(161, 27);
+            this.txtBoxEliminareMarca.Size = new System.Drawing.Size(183, 27);
             this.txtBoxEliminareMarca.TabIndex = 2;
             // 
             // Cancel
             // 
+            this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Cancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Cancel.Location = new System.Drawing.Point(76, 368);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(94, 29);
+            this.Cancel.Size = new System.Drawing.Size(110, 55);
             this.Cancel.TabIndex = 3;
             this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // btnEliminareMasina
@@ -81,7 +82,7 @@ namespace CRUDRentACar.Forms
             this.btnEliminareMasina.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminareMasina.Location = new System.Drawing.Point(647, 368);
             this.btnEliminareMasina.Name = "btnEliminareMasina";
-            this.btnEliminareMasina.Size = new System.Drawing.Size(112, 29);
+            this.btnEliminareMasina.Size = new System.Drawing.Size(122, 55);
             this.btnEliminareMasina.TabIndex = 4;
             this.btnEliminareMasina.Text = "Eliminare";
             this.btnEliminareMasina.UseVisualStyleBackColor = true;

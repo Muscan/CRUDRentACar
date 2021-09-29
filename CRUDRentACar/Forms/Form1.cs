@@ -9,11 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRUDRentACar.Controllers;
+using static CRUDRentACar.Functions.Functii;
 
 namespace CRUDRentACar
 {
     public partial class frmMain : Form
+
     {
+        ControllerUser control = new ControllerUser();
+
         public frmMain()
         {
             InitializeComponent();
@@ -71,6 +75,25 @@ namespace CRUDRentACar
         {
             ControllerUser controllerUser = new ControllerUser();
             controllerUser.AfisareUsers(lstUsers);
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if (IsNotEmpty(txtBoxDeleteUser) == false)
+            {
+                MandatoryField("User to delete.");
+            }
+            else
+            {
+                control.DeleteUser(txtBoxDeleteUser.Text);
+                txtBoxDeleteUser.Clear();
+
+            }
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

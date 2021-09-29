@@ -22,15 +22,6 @@ namespace CRUDRentACar
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
             //Application.Run(new frmMain());
-
-
-    
-
-
-
-
-
-
         }
     }
 }

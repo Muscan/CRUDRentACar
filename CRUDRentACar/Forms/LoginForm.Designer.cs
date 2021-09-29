@@ -37,6 +37,7 @@ namespace CRUDRentACar.Forms
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.checkBoxIsAdmin = new System.Windows.Forms.CheckBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -119,12 +120,26 @@ namespace CRUDRentACar.Forms
             this.checkBoxIsAdmin.TabIndex = 7;
             this.checkBoxIsAdmin.Text = "Is Admin";
             this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
+            this.checkBoxIsAdmin.CheckedChanged += new System.EventHandler(this.checkBoxIsAdmin_CheckedChanged);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRegister.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegister.Location = new System.Drawing.Point(432, 329);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(125, 45);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.checkBoxIsAdmin);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
@@ -151,5 +166,6 @@ namespace CRUDRentACar.Forms
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox checkBoxIsAdmin;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

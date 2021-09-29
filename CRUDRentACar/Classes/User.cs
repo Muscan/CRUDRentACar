@@ -18,13 +18,13 @@ namespace CRUDRentACar.Classes
         {
             this.user = user;
             this.password = password;
-            this.isAdmin = true;
+            this.isAdmin = isAdmin;
 
         }
         public String getUser()
         {
             return user;
-       }
+        }
         public String getPassword()
         {
             return password;
@@ -54,17 +54,13 @@ namespace CRUDRentACar.Classes
             return user + "," + password + "," + isAdmin;
         }
 
-        //userDesc
         public string userDesc(User user)
         {
             string userDetails = "";
             userDetails += user.getUser() + " ";
             userDetails += user.getPassword() + " ";
             userDetails += user.getIsAdmin() + " ";
-            return userDetails;
-              
-        }
-        
+            return userDetails;      
+        }      
     }
-    
 }

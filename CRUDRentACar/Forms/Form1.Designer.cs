@@ -44,6 +44,8 @@ namespace CRUDRentACar
             this.btnSignOut = new System.Windows.Forms.Button();
             this.btnPrintAllUsers = new System.Windows.Forms.Button();
             this.lstUsers = new System.Windows.Forms.ListView();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.txtBoxDeleteUser = new System.Windows.Forms.TextBox();
             this.toolStripOperatiuni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +72,7 @@ namespace CRUDRentACar
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 24);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // operatiiToolStripMenuItem
             // 
@@ -78,27 +81,27 @@ namespace CRUDRentACar
             this.inchiriereMasinaToolStripMenuItem,
             this.returnareMasinaToolStripMenuItem});
             this.operatiiToolStripMenuItem.Name = "operatiiToolStripMenuItem";
-            this.operatiiToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.operatiiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.operatiiToolStripMenuItem.Text = "Operatii";
             // 
             // statusParcAutoToolStripMenuItem
             // 
             this.statusParcAutoToolStripMenuItem.Name = "statusParcAutoToolStripMenuItem";
-            this.statusParcAutoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.statusParcAutoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.statusParcAutoToolStripMenuItem.Text = "Status Parc Auto";
             this.statusParcAutoToolStripMenuItem.Click += new System.EventHandler(this.statusParcAutoToolStripMenuItem_Click);
             // 
             // inchiriereMasinaToolStripMenuItem
             // 
             this.inchiriereMasinaToolStripMenuItem.Name = "inchiriereMasinaToolStripMenuItem";
-            this.inchiriereMasinaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.inchiriereMasinaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.inchiriereMasinaToolStripMenuItem.Text = "Inchiriere Masina";
             this.inchiriereMasinaToolStripMenuItem.Click += new System.EventHandler(this.inchiriereMasinaToolStripMenuItem_Click);
             // 
             // returnareMasinaToolStripMenuItem
             // 
             this.returnareMasinaToolStripMenuItem.Name = "returnareMasinaToolStripMenuItem";
-            this.returnareMasinaToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.returnareMasinaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.returnareMasinaToolStripMenuItem.Text = "Returnare Masina";
             this.returnareMasinaToolStripMenuItem.Click += new System.EventHandler(this.returnareMasinaToolStripMenuItem_Click);
             // 
@@ -109,7 +112,7 @@ namespace CRUDRentACar
             this.eliminareToolStripMenuItem,
             this.editareToolStripMenuItem});
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // adaugareToolStripMenuItem
@@ -168,15 +171,36 @@ namespace CRUDRentACar
             this.lstUsers.HideSelection = false;
             this.lstUsers.Location = new System.Drawing.Point(578, 101);
             this.lstUsers.Name = "lstUsers";
-            this.lstUsers.Size = new System.Drawing.Size(424, 214);
+            this.lstUsers.Size = new System.Drawing.Size(424, 102);
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnDeleteUser
+            // 
+            this.btnDeleteUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDeleteUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteUser.Location = new System.Drawing.Point(578, 226);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(129, 65);
+            this.btnDeleteUser.TabIndex = 4;
+            this.btnDeleteUser.Text = "Delete User";
+            this.btnDeleteUser.UseVisualStyleBackColor = false;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
+            // txtBoxDeleteUser
+            // 
+            this.txtBoxDeleteUser.Location = new System.Drawing.Point(734, 226);
+            this.txtBoxDeleteUser.Name = "txtBoxDeleteUser";
+            this.txtBoxDeleteUser.Size = new System.Drawing.Size(213, 27);
+            this.txtBoxDeleteUser.TabIndex = 5;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 734);
+            this.Controls.Add(this.txtBoxDeleteUser);
+            this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.lstUsers);
             this.Controls.Add(this.btnPrintAllUsers);
             this.Controls.Add(this.btnSignOut);
@@ -207,6 +231,8 @@ namespace CRUDRentACar
         private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Button btnPrintAllUsers;
         private System.Windows.Forms.ListView lstUsers;
+        private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.TextBox txtBoxDeleteUser;
     }
 }
 

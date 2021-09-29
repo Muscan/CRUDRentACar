@@ -41,25 +41,30 @@ namespace CRUDRentACar.Forms
             {
                 LoginForm loginForm = new LoginForm();
 
-                frmMain frm = new frmMain();
-
                 string name = txtBoxUserName.Text;
-
 
                 string pass = txtBoxPassword.Text;
 
-               //bool admin = checkBoxIsAdmin.Checked = false;
-
+                bool admin = control.IsAdmin(name);
 
                 User u = control.returnUser(name,pass);
                
-                if (u != null)
-                {   
-                    //function which checks if the user is admin and displays the register
-               
-                    frm.Show();
-                    ClearLoginFields(txtBoxPassword, txtBoxUserName);
-                    checkBoxIsAdmin.Checked = false;               
+                if (u != null )
+                {
+
+                    if (admin)
+                    {
+
+                        frmMain frmMain = new frmMain();
+
+                        frmMain.Show();
+                    }
+                    else
+                    {
+
+                        LoginUserRole frm = new LoginUserRole();
+                        frm.Show();  
+                    }
                 }
                 else
                 {
@@ -72,6 +77,21 @@ namespace CRUDRentACar.Forms
         {
             
             
+        }
+
+        private void checkBoxIsAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+            Register register = new Register();
+            if (register.ShowDialog() == DialogResult.OK)
+            {
+                control.readUserTxt();
+            }
         }
     }
 }

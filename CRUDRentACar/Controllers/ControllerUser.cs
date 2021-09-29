@@ -21,16 +21,13 @@ namespace CRUDRentACar.Controllers
         {
             for (int i = 0; i < users.Count; i++)
             {
-                if (users[i].getUser().Equals(users))
+                if (users[i].getUser().Equals(user))
                 {
                     return i;
                 }
             }
             return -1;
         }
-
-        
-
         //Save to file
         public void saveToFileUserTxt()
         {
@@ -63,9 +60,7 @@ namespace CRUDRentACar.Controllers
             else
             MessageBox.Show("User not found or pw not changed");
            
-        }
-
-        
+        } 
         //Add user
         public bool Add(User user)
         {
@@ -73,11 +68,11 @@ namespace CRUDRentACar.Controllers
             if (index == -1)
             {
                 this.users.Add(user);
-                Console.WriteLine("User added");
+                Console.WriteLine("User added ");
                 saveToFileUserTxt();
                 return true;
             }
-            MessageBox.Show("User exists");
+            MessageBox.Show("User exists ");
             return false;
         }
 
@@ -92,7 +87,21 @@ namespace CRUDRentACar.Controllers
                 return true;
             }
             return false;
+        }
 
+        //delete user
+        public bool DeleteUser(string user)
+        {
+            int indexOfUser = userIndex(user);
+            if (indexOfUser != -1)
+            {
+                MessageBox.Show("User " + users[indexOfUser].getUser() + " deleted");
+                this.users.RemoveAt(indexOfUser);
+                saveToFileUserTxt();
+                return true;
+            }
+            MessageBox.Show("User not found");
+            return false;
         }
         //update name
         public void updateName(string nume)
@@ -120,11 +129,9 @@ namespace CRUDRentACar.Controllers
                 bool isAdmin = bool.Parse(formattedUser[2]);
                 User userToAdd = new User(user, password, isAdmin);
                 users.Add(userToAdd);
-                line = read.ReadLine();
-                
+               line = read.ReadLine();         
             }
             read.Close();
-
         }
         public string toStringFromFile()
 
@@ -139,19 +146,17 @@ namespace CRUDRentACar.Controllers
         public bool IsAdmin(String nume)
         {
             
-
             for(int i = 0; i < users.Count; i++)
             {
 
                 if (users[i].getUser().Equals(nume))
                 {
-                    MessageBox.Show("Is admin");
+                   // MessageBox.Show("Is admin");
                     return users[i].getIsAdmin();
                 }
             }
 
             return false;
-
         }
 
         //return the 
@@ -171,7 +176,6 @@ namespace CRUDRentACar.Controllers
             }
 
             return null;
-
         }
         //Function not used for the moment
         public bool isUserAdmin(User userRole)
@@ -199,7 +203,5 @@ namespace CRUDRentACar.Controllers
                 listUsers.Items.Add(linie);
             }
         }
-        
-
     }
 }

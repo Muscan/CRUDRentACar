@@ -25,11 +25,9 @@ namespace CRUDRentACar.Controllers
                 {
                     return i;
                 }
-
             }
             return -1;
         }
-
         //Updates the car
         public void UpdateCombustibil(string nume, string combustibil)
         {
@@ -107,9 +105,7 @@ namespace CRUDRentACar.Controllers
 
         public void readFileTxt()
         {
-
            // masini.Clear();
-
             StreamReader read = new StreamReader(@"../../../Files/Masini.txt");
             String line = "";
             line = read.ReadLine();
