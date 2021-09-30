@@ -15,7 +15,7 @@ namespace CRUDRentACar.Functions
 
         public static void MandatoryField(string field)
         {
-            MessageBox.Show("Obligatoriu: " + field);
+            MessageBox.Show("Mandatory: " + field);
         }
 
         public static void ClearFields(TextBox txt1, TextBox txt2, TextBox txt3, TextBox txt4, TextBox txt5)

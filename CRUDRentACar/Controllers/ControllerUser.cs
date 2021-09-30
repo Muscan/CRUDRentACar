@@ -88,7 +88,7 @@ namespace CRUDRentACar.Controllers
                 saveToFileUserTxt();
                 return true;
             }
-            MessageBox.Show("User-ul nu a fost gasit.");
+            MessageBox.Show("User not found.");
             return false;
         }
 
