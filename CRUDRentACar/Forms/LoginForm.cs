@@ -45,13 +45,13 @@ namespace CRUDRentACar.Forms
 
                 string pass = txtBoxPassword.Text;
 
-                bool admin = control.IsAdmin(name);
+                
 
-                User u = control.returnUser(name,pass);
-               
+                User u = control.returnUser(name,pass, checkBoxIsAdmin.Checked);
+                
                 if (u != null )
                 {
-
+                    bool admin = control.isUserAdmin(u);
                     if (admin)
                     {
 
@@ -68,7 +68,7 @@ namespace CRUDRentACar.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Login does not work or person does not exist");
+                    MessageBox.Show("Login does not work, user is admin or does not exist");
                 }
             }
         }

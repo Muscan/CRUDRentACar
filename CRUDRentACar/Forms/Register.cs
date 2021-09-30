@@ -51,17 +51,10 @@ namespace CRUDRentACar.Forms
 
                 string registerUser = txtBoxName.Text;
                 string registerPassword = txtBoxPassword.Text;
-                bool admin = checkBoxAddIsAdmin.Checked = true;
-
-
+                bool admin = checkBoxAddIsAdmin.Checked;
                 User user = new User(registerUser, registerPassword, admin);
-
-
                 controlUser.Add(user);
-
                 controlUser.saveToFileUserTxt();
-
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

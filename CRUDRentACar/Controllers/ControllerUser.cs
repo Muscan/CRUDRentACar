@@ -80,12 +80,15 @@ namespace CRUDRentACar.Controllers
         public bool updateUser(User user)
         {
             int index = userIndex(user.getUser());
-            if (index == -1)
+            if (index != -1)
             {
-                this.users.Add(user);
+                users[index].setUser(user.getUser());
+                users[index].setPassword(user.getPassword());
+                users[index].setIsAdmin(user.getIsAdmin());
                 saveToFileUserTxt();
                 return true;
             }
+            MessageBox.Show("User-ul nu a fost gasit.");
             return false;
         }
 
@@ -143,32 +146,18 @@ namespace CRUDRentACar.Controllers
             }
             return tot;
         }
-        public bool IsAdmin(String nume)
-        {
-            
-            for(int i = 0; i < users.Count; i++)
-            {
-
-                if (users[i].getUser().Equals(nume))
-                {
-                   // MessageBox.Show("Is admin");
-                    return users[i].getIsAdmin();
-                }
-            }
-
-            return false;
-        }
-
+     
         //return the 
         //get name and pw as params TBD
 
-        public User returnUser(string nume, string password)
+        public User returnUser(string nume, string password, bool adminRole)
         {
             for (int i = 0; i < users.Count; i++)
             {
 
                 if (users[i].getUser().Equals(nume) 
-                 && users[i].getPassword().Equals(password))
+                 && users[i].getPassword().Equals(password)
+                 && users[i].getIsAdmin() == adminRole)
                 {
                    
                     return users[i];

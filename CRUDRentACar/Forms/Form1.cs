@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRUDRentACar.Controllers;
 using static CRUDRentACar.Functions.Functii;
+using CRUDRentACar.Classes;
 
 namespace CRUDRentACar
 {
@@ -73,8 +74,8 @@ namespace CRUDRentACar
 
         private void btnPrintAllUsers_Click(object sender, EventArgs e)
         {
-            ControllerUser controllerUser = new ControllerUser();
-            controllerUser.AfisareUsers(lstUsers);
+           
+            control.AfisareUsers(lstUsers);
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace CRUDRentACar
             else
             {
                 control.DeleteUser(txtBoxDeleteUser.Text);
+                control.AfisareUsers(lstUsers);
                 txtBoxDeleteUser.Clear();
 
             }
@@ -94,6 +96,41 @@ namespace CRUDRentACar
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            
+            control.AfisareUsers(lstUsers);
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            if (IsNotEmpty(txtBoxEditName) == false)
+            {
+                MandatoryField("User ");
+            }
+            else if (IsNotEmpty(txtBoxEditPassword) == false)
+            {
+                MandatoryField("Password ");
+            }
+            else
+            {
+                string editUser = txtBoxEditName.Text;
+                string editPassword = txtBoxEditPassword.Text;
+                bool isAdmin = checkBoxEditIsAdmin.Checked;
+
+                User usr = new User(editUser, editPassword, isAdmin);
+
+                control.updateUser(usr);
+                control.AfisareUsers(lstUsers);
+                ClearLoginFields(txtBoxEditName, txtBoxEditPassword);
+                checkBoxEditIsAdmin.Checked = false;
+
+                
+            }
         }
     }
 }
