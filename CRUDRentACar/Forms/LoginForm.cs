@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using static CRUDRentACar.Functions.Functii;
 using CRUDRentACar.Controllers;
 using CRUDRentACar.Classes;
-
 namespace CRUDRentACar.Forms
 {
     public partial class LoginForm : Form
