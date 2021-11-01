@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CRUDRentACar.Controllers;
-using static CRUDRentACar.Functions.Functii;
+
 
 namespace CRUDRentACar.Forms
 {

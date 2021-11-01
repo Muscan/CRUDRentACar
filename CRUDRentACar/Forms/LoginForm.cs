@@ -87,11 +87,16 @@ namespace CRUDRentACar.Forms
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            Register register = new Register();
+            btn register = new btn();
             if (register.ShowDialog() == DialogResult.OK)
             {
                 control.readUserTxt();
             }
+        }
+
+        private void txtBoxUserName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -146,9 +146,6 @@ namespace CRUDRentACar.Controllers
             }
             return tot;
         }
-     
-        //return the 
-        //get name and pw as params TBD
 
         public User returnUser(string nume, string password, bool adminRole)
         {
@@ -166,7 +163,7 @@ namespace CRUDRentACar.Controllers
 
             return null;
         }
-        //Function not used for the moment
+       
         public bool isUserAdmin(User userRole)
 
         {

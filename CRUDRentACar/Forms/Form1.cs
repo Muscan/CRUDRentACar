@@ -100,7 +100,7 @@ namespace CRUDRentACar
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
+            btn register = new btn();
             register.Show();
             
             control.AfisareUsers(lstUsers);

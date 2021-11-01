@@ -1,7 +1,7 @@
 ﻿
 namespace CRUDRentACar.Forms
 {
-    partial class Register
+    partial class btn
     {
         /// <summary>
         /// Required designer variable.
@@ -120,7 +120,7 @@ namespace CRUDRentACar.Forms
             this.checkBoxAddIsAdmin.Text = "Is Admin";
             this.checkBoxAddIsAdmin.UseVisualStyleBackColor = true;
             // 
-            // Register
+            // btn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@ namespace CRUDRentACar.Forms
             this.Controls.Add(this.lblAddPassword);
             this.Controls.Add(this.lblAddName);
             this.Controls.Add(this.lblRegisterUser);
-            this.Name = "Register";
+            this.Name = "btn";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);

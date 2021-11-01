@@ -77,6 +77,7 @@ namespace CRUDRentACar.Forms
             this.txtBoxUserName.Name = "txtBoxUserName";
             this.txtBoxUserName.Size = new System.Drawing.Size(125, 32);
             this.txtBoxUserName.TabIndex = 3;
+            this.txtBoxUserName.TextChanged += new System.EventHandler(this.txtBoxUserName_TextChanged);
             // 
             // txtBoxPassword
             // 

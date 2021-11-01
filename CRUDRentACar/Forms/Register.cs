@@ -13,10 +13,10 @@ using static CRUDRentACar.Functions.Functii;
 
 namespace CRUDRentACar.Forms
 {
-    public partial class Register : Form
+    public partial class btn : Form//btn = Register :)
     {
         private ControllerUser controlUser;
-        public Register()
+        public btn()
         {
             InitializeComponent();
 
@@ -46,7 +46,7 @@ namespace CRUDRentACar.Forms
             }
             else
             {
-                Register registerForm = new Register();
+                btn registerForm = new btn();
                 frmMain frm = new frmMain();
 
                 string registerUser = txtBoxName.Text;
@@ -58,9 +58,6 @@ namespace CRUDRentACar.Forms
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-
-             //Etap1: luam iinformatiile din txtbox 
-
         }
     }
 }
